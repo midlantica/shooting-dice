@@ -23,11 +23,11 @@ namespace ShootingDice
             Console.WriteLine($"{other.Name} rolls a {otherRoll}");
             if (myRoll > otherRoll)
             {
-                Console.WriteLine($"{Name} Wins!");
+                Console.WriteLine($"> {Name} Wins!");
             }
             else if (myRoll < otherRoll)
             {
-                Console.WriteLine($"{other.Name} Wins!");
+                Console.WriteLine($"> {other.Name} Wins!");
             }
             else
             {

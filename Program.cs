@@ -10,18 +10,21 @@ namespace ShootingDice
         {
             Console.Clear ();
 
+            Console.WriteLine("Shall we play a game");
+            Console.WriteLine("====================");
+
             Player player1 = new Player();
-            player1.Name = "Bob";
+            player1.Name = "Jason";
 
             Player player2 = new Player();
-            player2.Name = "Sue";
+            player2.Name = "Tamara";
 
             player2.Play(player1);
 
             Console.WriteLine("-------------------");
 
             Player player3 = new Player();
-            player3.Name = "Wilma";
+            player3.Name = "Oliver";
 
             player3.Play(player2);
 
@@ -29,15 +32,42 @@ namespace ShootingDice
 
             HumanPlayer cheatmaster = new HumanPlayer () 
             {
-                Name = "Fred"
+                Name = "Chad"
+            };
+
+            SmackTalkingPlayer jimmy = new SmackTalkingPlayer () {
+                Name = "Jimmy",
+                Taunt = "\"You are more disappointing than an unsalted pretzel.\""
+            };
+
+            CreativeSmackTalkingPlayer smackster = new CreativeSmackTalkingPlayer () {
+                Name = "Smackster",
+                Taunts = new List<string> () {
+                "\"Your abilities are too infant-like for doing much alone.\"",
+                "\"More of your conversation would infect my brain.\"",
+                "\"Your brain is as dry as the remainder biscuit after voyage.\""
+                }
+            };
+
+            SoreLoserPlayer verucaSalt = new SoreLoserPlayer () {
+                Name = "Veruca Salt"
             };
 
             OneHigherPlayer OneUpOnYou = new OneHigherPlayer () {
-                Name = "I'm Up"
+                Name = "John Onuponyou"
             };
 
+            UpperHalfPlayer upperHalf = new UpperHalfPlayer () {
+                Name = "Upper Half"
+            };
+
+            SoreLoserUpperHalfPlayer soreLoserUpperHalf = new SoreLoserUpperHalfPlayer () {
+                Name = "Sore Loser Upper Half"
+            };
+
+
             Player large = new LargeDicePlayer();
-            large.Name = "Bigun Rollsalot";
+            large.Name = "Big Shot";
 
             player1.Play(large);
 
@@ -48,16 +78,20 @@ namespace ShootingDice
                 player2, 
                 player3, 
                 large, 
-                //CardinalBiggles, 
+                jimmy, 
                 OneUpOnYou,
                 cheatmaster, 
-                //SmackTalkingPlayer, 
-                //Donnie, 
-                //upperHand, 
-                //bigDonnie
+                smackster, 
+                verucaSalt,
+                upperHalf,
+                soreLoserUpperHalf
             };
 
-            PlayMany(players);
+            try { 
+                PlayMany(players); 
+            } catch {
+                Console.WriteLine("\"I do not like you green eggs and ham!\"");
+            }
         }
 
         static void PlayMany(List<Player> players)
