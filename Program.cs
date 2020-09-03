@@ -32,6 +32,10 @@ namespace ShootingDice
                 Name = "Fred"
             };
 
+            OneHigherPlayer OneUpOnYou = new OneHigherPlayer () {
+                Name = "I'm Up"
+            };
+
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
@@ -40,7 +44,17 @@ namespace ShootingDice
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, 
+                player2, 
+                player3, 
+                large, 
+                //CardinalBiggles, 
+                OneUpOnYou,
+                cheatmaster, 
+                //SmackTalkingPlayer, 
+                //Donnie, 
+                //upperHand, 
+                //bigDonnie
             };
 
             PlayMany(players);

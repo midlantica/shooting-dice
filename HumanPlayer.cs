@@ -13,7 +13,7 @@ namespace ShootingDice
             string response;
             do 
             {
-                Console.WriteLine ("Enter your roll");
+                Console.Write($"Enter your roll > ");
                 response = Console.ReadLine();
             }
             while (int.TryParse (response, out roll) == false);
