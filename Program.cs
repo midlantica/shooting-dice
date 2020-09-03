@@ -8,6 +8,8 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
+            Console.Clear ();
+
             Player player1 = new Player();
             player1.Name = "Bob";
 
@@ -24,6 +26,11 @@ namespace ShootingDice
             player3.Play(player2);
 
             Console.WriteLine("-------------------");
+
+            HumanPlayer cheatmaster = new HumanPlayer () 
+            {
+                Name = "Fred"
+            };
 
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
